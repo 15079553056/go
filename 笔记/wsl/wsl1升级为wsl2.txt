@@ -1,0 +1,46 @@
+//-----------------------------------------//
+安装WSL2的前提是安装了WSL1，并且WSL配置好了Ubuntu(20.04)
+
+需要在 "启用或关闭Windows功能" 中勾选几个选项
+
+1.勾选 Hyper-V ，这是虚拟化功能，WSL2更类似于一个虚拟机，所以需要勾选此项。
+
+  备注:有时会出现 "Hyper" 中的 "Hyper-V" 平台无法勾选问题，是因为CPU的虚拟化技术是禁用的，需要在BIOS中开启
+  
+2.勾选 "适用于Linux的Windows子系统"
+
+3.勾选 "虚拟机平台"
+
+勾选完成后重启电脑
+
+//-----------------------------------------//
+注意，Win10 必须升级至2004最新版
+
+//-----------------------------------------//
+下载Linux内核更新包，下载完成后是一个msi文件，直接点击运行
+
+x64: https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
+arm64: https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_arm64.msi
+
+//-----------------------------------------//
+设置分发版版本
+
+1.搜索"PowerShell"，右键"以管理员身份运行"
+
+2.首先查看当前的WSL版本
+wsl -l -v
+会有个VERSION, 1 代表WSL1, 2 代表WSL2
+
+3.然后执行  
+wsl --set-version Ubuntu-20.04 2
+
+4.完成后执行
+wsl -l -v
+查看是否切换完成
+
+5.设置WSL2为默认的
+wsl --set-default-version 2
+
+
+
+

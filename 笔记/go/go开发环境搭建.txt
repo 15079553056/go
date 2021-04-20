@@ -1,0 +1,46 @@
+//-----------------------------------------//
+Windows下go开发环境搭建
+
+因为google网站是被墙了，所以去go的官方镜像站 https://golang.google.cn/dl/
+  
+进入后选择 go1.16.3.windows-amd64.msi ,然后安装。安装完成后可在cmd输入 go version ，出来版本号说明安装成功。
+  
+配置path，在环境变量中的系统变量，新建一个叫GOPATH，值为go的开发目录(注意不是在path下，是新建)。
+  
+查看当前用户的环境变量是否存在GOPATH，存在的话就删除，不然会覆盖系统设置的GOPATH，导致系统环境设置失败。
+	
+在配置的go的开发环境目录下，新建三个文件夹(bin, src, pkg)。
+
+设置好后，重新打开一个cmd，输入 go env，查看 GOPATH 和 GOROOT 是否正确
+  
+  
+//-----------------------------------------//
+Linux(wsl)下go开发环境搭建
+
+下载go语言开发环境(选择最新版本)，地址是https://golang.google.cn/dl/，可以根据自己的情况选择相应的版本，我选择的是go1.15.5.linux-amd64.tar.gz。下载命令如下：直接下载到/usr/local目录下。
+
+  wget https://golang.google.cn/dl/go1.15.5.linux-amd64.tar.gz
+
+下载完成后检查一下完整性：
+
+  sha256sum go1.15.5.linux-amd64.tar.gz
+  
+我们使用命令ll检查下是否存在该压缩包，可以看到已经下载成功了
+
+接下来解压该文件到当前目录
+  
+  tar -C /usr/local -xzf go1.15.5.linux-amd64.tar.gz
+  
+解压成功，然后配置环境变量，可以在不同的位置添加环境变量，比如 /etc/profile 或 $HOME/.profile 等。不同之处是 /etc/profile 中的配置是共享给主机上的所有用户的，而 $HOME/.profile 中的配置只对当前用户起作用。选择在 /etc/profile 中添加 PATH 变量的配置信息，具体操作如下：
+
+  先打开/etc/profile文件： sudo vim /etc/profile
+  
+  在最后加入下面这句话：  export PATH=$PATH:/usr/local/go/bin
+  
+  然后:wq!保存退出即可。保存该文本并退出登录，然后重新登录一次系统。执行下面的命令查看 PATH 变量的内容：echo $PATH | grep go
+  
+  看到 PATH 变量的输出中包含 /usr/local/go/bin 路径就说明 PATH 变量已经设置成功。也就是说，无论当前路径在哪里都可以直接执行 go 命令了，比如查看go的基本信息：直接命令输入 go
+  
+
+
+

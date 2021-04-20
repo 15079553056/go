@@ -1,0 +1,59 @@
+//-----------------------------------------//
+设置文件夹不自动折叠
+
+  设置中搜索compact，取消文件夹自动折叠
+  
+//-----------------------------------------//
+设置vscode自动保存
+
+  在设置中搜 save ，Auto Save中选择afterDelay，也可以设置延迟保存时间。
+  
+//-----------------------------------------//
+设置vscode允许打开多个标签页
+
+  首先进入路径C:\Users\admin\AppData\Roaming\Code\User；
+
+  然后打开settings.json文件，并添加一条配置："workbench.editor.enablePreview": false
+  
+  添加完以后重启即可
+
+//-----------------------------------------//
+windows下vscode安装go插件(常规方法是改代理，参考 https://goproxy.cn/ )
+  
+常规来说，当有go文件，vscode会自动提示安装插件，但是因为被墙，所以经常安装失败，所以有以下几种方法
+
+a.开国外的vpn或代理
+
+b.设置go proxy(改为国内go代理)
+
+  cmd命令 go env -w GOPROXY=https://goproxy.cn  清空缓冲 go clean --modcache
+  
+c. cmd执行
+   go env -w GO111MODULE=on
+   go env -w GOPROXY=https://goproxy.cn,direct
+   
+   打开PowerShell执行
+   $env:GO111MODULE = "on"
+   $env:GOPROXY = "https://goproxy.cn"
+   
+//-----------------------------------------//
+windows下vscode连接wsl安装go插件
+
+第一步: go env -w GO111MODULE=on
+
+        go env -w GOPROXY=https://goproxy.cn,direct
+
+第二步: export GO111MODULE=off  
+
+		export GO111MODULE=on
+
+        export GOPROXY=https://goproxy.cn
+		
+		或者
+		
+		echo "export GO111MODULE=on" >> ~/.profile
+		
+		echo "export GOPROXY=https://goproxy.cn" >> ~/.profile
+		
+		source ~/.profile
+  

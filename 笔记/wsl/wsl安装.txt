@@ -1,0 +1,67 @@
+//-----------------------------------------//
+一些windows使用WSL的小技巧
+
+  在WSL命令执行 explorer.exe .  可以直接使用windows访问wsl的文件
+
+//-----------------------------------------//
+启用或关闭Windows功能
+
+勾选"适用于Linux的Windows子系统"
+  
+//-----------------------------------------//
+在 Microsoft Store 商店搜索 ubuntu
+
+选择 "Ubuntu 20.04"，无编号的那个，是最新的版本
+  
+//-----------------------------------------//
+创建账户，账号和密码都是 root123ls
+
+//-----------------------------------------//
+安装成功后，做一些配置
+
+换源
+  
+首先确定Linux的版本，不然版本和源不对应，安装软件会出问题。
+确定版本后，去网上搜索相应源。
+
+换源
+   进入 /etc/apt 目录 
+   a. 备份旧的源文件  sudo  cp   /etc/apt/sources.list   /etc/apt/sources.list.bak
+   b. 更改文件权限使其可编辑   sudo  chmod  777  /etc/apt/sources.list 
+   c. 删除原来的文件内容,修改为阿里源
+   
+#阿里源 Ubuntu 20.04 LTS
+deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
+
+更新软件列表，换源完成
+	sudo apt update
+	sudo apt-get update
+
+//-----------------------------------------//
+修改超级管理员(root)密码
+
+sudo passwd root
+
+//-----------------------------------------//
+安装git
+
+git --version
+
+sudo apt install git
+
+//-----------------------------------------//
+安装svn
+
+svn --version
+
+sudo apt install subversion
+

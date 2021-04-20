@@ -1,0 +1,16 @@
+//-----------------------------------------//
+windows下Git+TortoiseGit 安装教程
+  
+  下载 git，https://git-scm.com/download/win ,完成后安装
+  
+  下载 TortoiseGit，https://download.tortoisegit.org/tgit/2.4.0.0/TortoiseGit-2.4.0.2-64bit.msi ，完成后安装。(安装时选择OpenSSH,Git default SSH Client)
+  
+  下载中文语言包 https://download.tortoisegit.org/tgit/2.4.0.0/TortoiseGit-LanguagePack-2.4.0.0-64bit-zh_CN.msi ，完成后安装
+  
+  点击鼠标右键，进入TortoiseGit设置界面，点击"重新运行首次启动向导"。
+  
+  一直点击下一步，直到"身份验证和凭据存储"界面。选择"OpenSSH"，点击"生成Putty密钥对"。
+  
+  点击"Generate"按钮生成密钥对。鼠标需要在窗口上不停移动来生成。
+  
+  
