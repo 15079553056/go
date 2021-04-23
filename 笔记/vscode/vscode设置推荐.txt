@@ -56,4 +56,15 @@ windows下vscode连接wsl安装go插件
 		echo "export GOPROXY=https://goproxy.cn" >> ~/.profile
 		
 		source ~/.profile
+		
+//-----------------------------------------//
+VS code报错，Go代码的头部包名处报 gopls requires a module at the root of your workspace
+
+	设置中搜索 gopls -> 在 settings.json 中编辑 -> 
+	
+	添加 
+	"gopls": {
+        "experimentalWorkspaceModule": true
+    }
+	
   
