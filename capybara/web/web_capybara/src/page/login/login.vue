@@ -1,7 +1,6 @@
 <template>
 <div>
-  <div id="app">APP 根组件66666666</div>
-  <router-view></router-view>
+  <div id="app">收藏界面</div>
 </div>
 </template>
 

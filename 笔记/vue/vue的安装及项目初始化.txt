@@ -1,7 +1,7 @@
 //-----------------------------------------//
 windows 下 vue 的安装
 
-  1. 下载安装 node.js ,因为 NPM 是随同 NodeJS 一起安装的包管理工具
+  1. 下载安装 node.js ,因为 NPM 是随同 NodeJS 一起安装的包管理工具，要求Node 8.9或者以上版本
   
      下载地址 https://nodejs.org/en/
 	 
