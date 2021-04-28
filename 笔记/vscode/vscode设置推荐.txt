@@ -67,4 +67,8 @@ VS code报错，Go代码的头部包名处报 gopls requires a module at the roo
         "experimentalWorkspaceModule": true
     }
 	
+//-----------------------------------------//
+vscode 回到上一个位置  : Alt + <-
+
+	
   
