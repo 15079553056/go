@@ -1,0 +1,127 @@
+//-----------------------------------------//
+1. 先停止 windows 的 mysql 服务
+
+2. 查看是否已安装 mysql
+
+   sudo netstat -tap | grep mysql
+
+   如果无输出，则代表未安装
+
+   安装 mysql
+
+   sudo apt install mysql-server                     //服务端
+   sudo apt install mysql-client                     //客户端
+   sudo apt install libmysqlclient-dev               //程序编译时链接的库
+   
+3. 查看并开启 mysql 服务
+
+   查看 mysql 服务: sudo service mysql status
+   
+   //---------------//
+   开启 mysql 服务: sudo service mysql start 
+   
+   注意: a. 先停止windows的mysql服务。
+         b. 因为子系统与windows共用端口，有可能出现因为端口占用导致服务启动失败。
+		    执行开启 mysql 服务报错: * Starting MySQL database server mysqld                                                                                su: warning: cannot change directory to /nonexistent: No such file or directory
+   
+   这个是由于 mysql 日志输出的目录没有权限导致的。
+   
+   解决方法: # 停止mysql服务 
+			 sudo service mysql stop
+			 
+			 # 修改权限 
+			 sudo usermod -d /var/lib/mysql/ mysql
+			 
+			 # 重启mysql服务
+			 sudo service mysql start
+   //---------------//
+   
+4. 登录 mysql
+ 
+   mysql -u root -p  (报错:ERROR 1698 (28000): Access denied for user 'root'@'localhost')
+   
+   原因: 因为安装的过程中没让设置密码，可能密码为空，但无论如何都进不去mysql。
+   
+   解决方法: 第一步: 切换到 root 角色
+             第二步: sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+			 第三步: 进入到这个配置文件，然后在这个配置文件中的[mysqld]这一块的最后加入
+			         skip-grant-tables
+					 
+			 第四步: 然后保存退出  ctrl+O ，按回车键，再 ctrl+X
+			 
+			 作用: 就是让你可以不用密码登录进去mysql。
+			 
+5. 再重新启动 mysql: service mysql restart
+   
+   报错: su: Authentication failure
+   
+   解决方法: 第一步: 先进入到root用户：su root
+   
+             第二步: 再重新启动 mysql: service mysql restart
+			 
+6. 在终端输入 mysql -u root -p
+
+   遇见输入密码的提示直接回车即可，进入mysql后，分别执行下面三句话：
+   
+   use mysql;   # 回车
+   
+   update user set authentication_string=password("root") where user="root";  # 回车
+   注意: mysql 8.0 已经不支持 password 方法设置密码了，应该是下面方法
+   先把密码设置为空: update user set authentication_string='' where user='root';
+   
+   flush privileges;  # 回车
+   
+   然后修改密码
+   ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+   
+   flush privileges;  # 回车
+   
+   然后退出 mysql: quit
+   
+7. 重新进入到mysqld.cnf文件中去把刚开始加的 skip-grant-tables 这条语句给注释掉：
+
+   sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+   
+8. 再返回终端输入: mysql -u root -p
+
+   没报错即完成。下面就不用看了。
+   
+   报错: ERROR 1524 (HY000): Plugin 'auth_socket' is not loaded
+   
+   解决: 第一步: 把注释掉的那条语句重新生效（即删除#符号）
+				 sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+				 
+		 第二步: 再重新进入mysql中：
+                 mysql -u root -p
+				 遇见输入密码的直接回车
+				 
+		 第三步: 进去后：
+				 use mysql;
+				 select user,plugin from user;
+				 
+		 第四步: 可见错误原因是因为plugin root的字段是auth_socket，那我们改掉它为下面的mysql_native_password即可：
+		         update user set authentication_string="root",plugin='mysql_native_password' where user='root';
+		
+		 第五步: 再执行 select user,plugin from user; 查看 root 的 plugin 是否为 mysql_native_password
+		 
+		         退出 quit
+				 
+		 第六步: 重新进入到mysqld.cnf文件中去把刚开始加的 skip-grant-tables 这条语句给注释掉：
+			     sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+				 
+		 第七步: 再返回终端输入
+                 mysql -u root -p
+				 
+9. 设置mysql允许远程访问
+	
+   sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+   注释掉 bind-address = 127.0.0.1
+	
+   然后重启 mysql
+
+   sudo service mysql restart
+
+　 现在在windows下可以使用navicat远程连接ubuntu下的mysql服务。
+		      
+   
+   
