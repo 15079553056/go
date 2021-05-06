@@ -5,3 +5,12 @@ gin框架需要go语言版本在1.6及以上，可以通过 go version 查看go�
 安装
 
   Linux: go get -u github.com/gin-gonic/gin
+  
+//-----------------------------------------//
+gin 连接和使用 MySql 数据库
+
+  1. 想要在 Gin 中操作 MySql，首先要有 MySql 驱动程序。下载
+  
+     go get "github.com/go-sql-driver/mysql"
+	 
+	 

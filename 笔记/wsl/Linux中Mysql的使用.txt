@@ -1,0 +1,26 @@
+//-----------------------------------------//
+查看 Mysql 的运行状态
+  
+  sudo service mysql status
+  
+//-----------------------------------------//
+启动 Mysql 服务
+
+  sudo service mysql start
+
+重启 MySql 服务
+
+  service mysql restart
+  
+停止 MySql 服务
+
+  sudo service mysql stop
+  
+//-----------------------------------------//
+登录 MySql
+
+  mysql -u root -p
+
+退出 MySql
+  
+  quit

@@ -1,9 +1,9 @@
-create table if not exists t_link(
+create table if not exists t_manager(
   f_id bigint(20) unsigned not null auto_increment,
-  f_user_name varchar(256) not null default '' comment '账号(电话/邮箱)',
-  f_user_password varchar(256) not null default '' comment '密码',
+  f_account varchar(256) not null default '' comment '账号',
+  f_password varchar(256) not null default '' comment '密码',
   f_create_time int(10) unsigned NOT NULL DEFAULT '0' COMMENT '创建时间',
   f_modify_time int(10) unsigned NOT NULL DEFAULT '0' COMMENT '修改时间',
   f_is_del tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否被删除，0代表有效数据，1代表已被删除',
   PRIMARY KEY (f_id)
-)engine=innodb default charset=utf8mb4 comment='链接表';
+)engine=innodb default charset=utf8mb4 comment='管理员表';
