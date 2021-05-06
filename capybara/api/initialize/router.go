@@ -17,8 +17,9 @@ func Routers() *gin.Engine {
 
 	PrivateGroup.Use()
 	{
-	 	routers.InitUserRouter(PrivateGroup) //注册用户路由
+		routers.InitUserRouter(PrivateGroup)    //注册用户路由
+		routers.InitManagerRouter(PrivateGroup) //注册后台管理员路由
 	}
-	
+
 	return engine
 }
