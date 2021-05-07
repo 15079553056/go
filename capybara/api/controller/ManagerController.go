@@ -7,7 +7,7 @@ import (
 )
 
 func ManagerLogin(context *gin.Context) {
-	service.ManagerLogin(context)
+	service.ManagerLogin()
 
 	context.JSON(200, map[string]interface{}{
 		"message": "hello go.",
