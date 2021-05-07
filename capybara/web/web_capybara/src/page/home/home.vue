@@ -1,7 +1,8 @@
 <template>
-<div>
-  <div id="app">登录界面</div>
-</div>
+  <div>
+    <router-view></router-view>
+    <div id="app">home页面</div>
+  </div>
 </template>
 
 <script>
