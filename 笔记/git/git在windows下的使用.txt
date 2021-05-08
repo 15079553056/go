@@ -13,4 +13,13 @@ windows下Git+TortoiseGit 安装教程
   
   点击"Generate"按钮生成密钥对。鼠标需要在窗口上不停移动来生成。
   
+//-----------------------------------------//
+解决 github 使用缓慢，经常超时的问题
+
+  1. 首先检查C盘下host文件中的github相关访问的域名对应的ip是否正确，不正确查询正确的IP：https://www.ipaddress.com/
+  
+     C:\Windows\System32\drivers\etc\hosts 文件，增加
+	 #github
+	 140.82.112.4 github.com
+	 199.232.69.194 github.global.ssl.fastly.net
   

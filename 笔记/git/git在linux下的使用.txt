@@ -55,3 +55,13 @@ git提交到本地仓库
 
 	git pull
 
+//-----------------------------------------//
+
+  查询正确的IP：https://www.ipaddress.com/
+
+  sudo vim /etc/hosts
+  
+  增加
+  
+  140.82.113.3  github.com
+  199.232.69.194 github.global.ssl.fastly.net

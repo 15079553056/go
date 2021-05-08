@@ -1,7 +1,8 @@
 <template>
 <div>
-  <div id="app">APP 根组件888</div>
   <router-view></router-view>
+  <div id="app">APP 根组件888</div>
+  
 </div>
 </template>
 

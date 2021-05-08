@@ -1,7 +1,8 @@
 <template>
-<div>
-  <div id="app">登录界面</div>
-</div>
+  <div>
+    <div id="app">登录界面</div>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
