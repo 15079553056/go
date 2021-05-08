@@ -25,7 +25,7 @@ export default new Router({
       component:collect
     },
     {
-      path:'login',
+      path:'/login',
       name:'login',
       component:login
     }

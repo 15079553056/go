@@ -36,17 +36,18 @@ windows下使用脚手架初始化项目
   
   进入交互界面，根据自己情况选择
   
-  ?Project name vue-demo # 项目名称，直接回车，按照括号中默认名字（注意这里的名字不能有大写字母，如果有会报错Sorry, name can no longer contain capital letters）。
+    ?Project name vue-demo # 项目名称，直接回车，按照括号中默认名字（注意这里的名字不能有大写字母，如果有会报错Sorry, name can no longer contain capital letters）。
 	? Project description A Vue.js project # 项目描述,随便写
 	? Author # 作者名称
 	? Vue build standalone # 我选择的运行加编译时
-    Runtime + Compiler: recommended for most users
+      Runtime + Compiler: recommended for most users
+	  Runtime-only: about 6KB lighter min+gzip, but templates ......
 	? Install vue-router? Yes # 是否需要 vue-router，一般是需要
-	? Use ESLint to lint your code? Yes # 是否使用 ESLint 作为代码规范.
+	? Use ESLint to lint your code? Yes # 是否使用 ESLint 作为代码规范，一般是不需要
 	? Pick an ESLint preset Standard # 一样的ESlint 相关
-	? Set up unit tests Yes # 是否安装单元测试
+	? Set up unit tests Yes # 是否安装单元测试，选择否
 	? Pick a test runner 按需选择 # 测试模块
-	? Setup e2e tests with Nightwatch? 安装选择 # e2e 测试
+	? Setup e2e tests with Nightwatch? 安装选择 # e2e 测试(end to end 测试，端到端测试)，选择否
 	? Should we run `npm install` for you after the project has been created? (recommended) npm # 包管理器，我选的NPM
 	
   启动项目
