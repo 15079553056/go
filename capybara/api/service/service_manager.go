@@ -29,6 +29,7 @@ import (
 // 	//
 // }
 
-func ManagerLogin() {
+func ManagerLogin(username string,password string) {
 	db := mysql.MysqlDB.GetConn()
+	//db.Where("username=?",username).First()
 }
