@@ -20,6 +20,6 @@ windows下Git+TortoiseGit 安装教程
   
      C:\Windows\System32\drivers\etc\hosts 文件，增加
 	 #github
-	 140.82.113.3 github.com git 
+	 140.82.113.3 github.com
 	 199.232.69.194 github.global.ssl.fastly.net
   
