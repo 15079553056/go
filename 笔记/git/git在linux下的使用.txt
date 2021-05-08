@@ -63,5 +63,5 @@ git提交到本地仓库
   
   增加
   
-  140.82.113.3  github.com
+  140.82.113.3 github.com
   199.232.69.194 github.global.ssl.fastly.net
