@@ -39,7 +39,7 @@ windows下使用脚手架初始化项目
     ?Project name vue-demo # 项目名称，直接回车，按照括号中默认名字（注意这里的名字不能有大写字母，如果有会报错Sorry, name can no longer contain capital letters）。
 	? Project description A Vue.js project # 项目描述,随便写
 	? Author # 作者名称
-	? Vue build standalone # 我选择的运行加编译时
+	? Vue build standalone # 一般是选第二项
       Runtime + Compiler: recommended for most users
 	  Runtime-only: about 6KB lighter min+gzip, but templates ......
 	? Install vue-router? Yes # 是否需要 vue-router，一般是需要
