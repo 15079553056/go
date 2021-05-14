@@ -7,9 +7,18 @@ import (
 )
 
 func ManagerLogin(context *gin.Context) {
-	service.ManagerLogin()
+	//获取表单信息
+	username:=context.PostForm("username")
+	password:=context.PostForm("password")
 
-	context.JSON(200, map[string]interface{}{
-		"message": "hello go.",
-	})
+
+	if err:=service.ManagerLogin(username,password);err!=nil{
+		context.JSON(200, map[string]interface{}{
+			"message": "hello go.",
+		})
+	}else{
+		context.JSON(200, map[string]interface{}{
+			"message": "hello go.",
+		})
+	}	
 }

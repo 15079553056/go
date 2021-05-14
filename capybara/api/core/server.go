@@ -6,7 +6,7 @@ import "capybara/initialize"
 func RunWindowsServer() {
 	//初始化redis服务
 
-	//初始化路由
+	//初始化Gin及路由
 	Router := initialize.Routers()
 	//Router.Static("", "")
 	Router.Run(":9999")

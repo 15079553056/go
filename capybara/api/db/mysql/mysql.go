@@ -17,7 +17,7 @@ type Mysql struct {
 
 func Default() {
 	mysql := &Mysql{}
-	conn, err := gorm.Open("mysql", "root:root@(127.0.0.1:3306)/db_capybara?charset=utf8&parseTime=True&loc=Local")
+	conn, err := gorm.Open("mysql", "root:root@(122.51.138.213:3306)/db_capybara?charset=utf8&parseTime=True&loc=Local")
 	if err != nil {
 		log.Fatal(err.Error())
 		panic(err.Error())
