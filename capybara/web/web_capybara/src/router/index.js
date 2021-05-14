@@ -6,12 +6,14 @@ import App from '../App'
 //1. 安装路由插件
 Vue.use(Router)
 
+//
 const home = r => require.ensure([], () => r(require('../page/home/home')), 'home')
 const login = r => require.ensure([], () => r(require('../page/login/login')), 'login')
 const collect = r => require.ensure([], () => r(require('../page/collect/collect')), 'collect')
 
 //2. 创建 VueRouter 对象
 const router = new VueRouter({
+  mode:'history',
   routes: [
     {
       path: '/',
