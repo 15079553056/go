@@ -1,0 +1,9 @@
+create table if not exists t_category(
+	f_id bigint(20) unsigned not null auto_increment,
+	f_name varchar(256) not null default '' comment '分类名称',
+	f_parent_id bigint(20) unsigned not null default 0 comment '父id，如果为0则代表一级目录',
+	f_create_time int(10) unsigned NOT NULL DEFAULT '0' COMMENT '创建时间',
+    f_modify_time int(10) unsigned NOT NULL DEFAULT '0' COMMENT '修改时间',
+    f_is_del tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否被删除，0代表有效数据，1代表已被删除',
+    PRIMARY KEY (f_id)
+)engine=innodb default charset=utf8mb4 comment='分类表';

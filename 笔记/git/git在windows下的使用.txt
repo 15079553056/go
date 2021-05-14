@@ -20,7 +20,7 @@ windows下Git+TortoiseGit 安装教程
   
      C:\Windows\System32\drivers\etc\hosts 文件，增加
 	 #github
-	 140.82.112.4 github.com
+	 140.82.112.3 github.com
 	 199.232.69.194 github.global.ssl.fastly.net
 	 
   2. 打开cmd执行dns刷新命令
